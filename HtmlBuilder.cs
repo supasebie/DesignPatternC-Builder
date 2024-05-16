@@ -11,10 +11,12 @@ public class HtmlBuilder
         this.rootName = rootName;
     }
 
-    public void AddChild(string childName, string childText)
+    public HtmlBuilder AddChild(string childName, string childText)
     {
         var childElement = new HtmlElement(childName, childText);
         root.Elements.Add(childElement);
+
+        return this;
     }
 
     public override string ToString()
